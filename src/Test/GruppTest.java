@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import Domain.Grupp;
+import Domain.Inlamning;
 
 public class GruppTest {
 
@@ -18,6 +19,14 @@ public class GruppTest {
 		
 		//Kontrollerar attribut
 		assertEquals("Z", gruppid);
+		
+		grupp.skapaInlamning("exfil");
+		grupp.skapaInlamning("exfil");
+		
+		String newid = grupp.createID();
+		
+		assertEquals("KOMPL2", newid);
+		
 	}
 
 }

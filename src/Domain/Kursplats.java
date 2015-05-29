@@ -59,6 +59,24 @@ public Moment getMoment(String momentid) {
 	return null;
 }
 
+//IAD steg 1-7: Steg 3:
+public void storeFile(String momentid, String uppgiftsid, String gruppid, String fil) {
+	getMoment(momentid).storeFile(uppgiftsid, gruppid, fil);
+	
+}
+
+public void examineraUppgift(String momentid, String uppgiftsid,
+		String gruppid, String inlamningid, String betyg, String betygskala) {
+	getMoment(momentid).examineraUppgift(uppgiftsid, gruppid, inlamningid, betyg, betygskala);
+	
+}
+
+public String hamtaUppgift(String momentid, String uppgiftsid, String gruppid,
+		String inlamningid) {
+	String file = getMoment(momentid).hamtaUppgift(uppgiftsid, gruppid, inlamningid);
+	return file;
+}
+
 
 
 	

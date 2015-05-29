@@ -1,6 +1,8 @@
 package Domain;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Inlamning {
@@ -10,9 +12,10 @@ public class Inlamning {
 	String inlamningsid;
 	Betyg betyg;
 	
-	public Inlamning(String date, String file, String inlamningsid) {
-		
-		this.date = date;
+	public Inlamning(String file, String inlamningsid) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date_ = new Date();
+		this.date = dateFormat.format(date_);
 		this.file = file;
 		this.inlamningsid = inlamningsid;
 	}
@@ -42,6 +45,11 @@ public class Inlamning {
 
 	public void setBetyg(Betyg betyg) {
 		this.betyg = betyg;
+	}
+
+	public void examineraUppgift(String betyg2, String betygskala) {
+		betyg = new Betyg(betyg2, betygskala);
+		
 	}
 	
 	

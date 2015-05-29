@@ -54,6 +54,24 @@ public Uppgift getUppgift(String uppgiftsid) {
 		this.uppgifter = uppgifter;
 	}
 	
+	//IAD steg 1-7: Steg 4
+	public void storeFile(String uppgiftsid, String gruppid, String fil) {
+		
+		getUppgift(uppgiftsid).storeFile(gruppid, fil);
+	}
+
+	public void examineraUppgift(String uppgiftsid, String gruppid,
+			String inlamningid, String betyg, String betygskala) {
+		getUppgift(uppgiftsid).examineraUppgift(gruppid, inlamningid, betyg, betygskala);
+		
+	}
+
+	public String hamtaUppgift(String uppgiftsid, String gruppid,
+			String inlamningid) {
+		String file = getUppgift(uppgiftsid).hamtaUppgift(gruppid, inlamningid);
+		return file;
+	}
+	
 	
 
 }

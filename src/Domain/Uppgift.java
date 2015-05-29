@@ -67,6 +67,27 @@ public void setGrupplista(ArrayList<Grupp> grupplista) {
 	this.grupplista = grupplista;
 }
 
+//IAD steg 1-7: Steg 5
+public void storeFile(String gruppid, String fil) {
+	
+	getGrupp(gruppid).storeFile(fil);
+}
+
+
+public void examineraUppgift(String gruppid, String inlamningid, String betyg,
+		String betygskala) {
+	
+	getGrupp(gruppid).examineraUppgift(inlamningid, betyg, betygskala);
+	
+}
+
+
+public String hamtaUppgift(String gruppid, String inlamningid) {
+	
+	String file = getGrupp(gruppid).hamtaUppgift(inlamningid);
+	return file;
+}
+
 
 
 

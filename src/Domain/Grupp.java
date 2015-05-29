@@ -23,8 +23,25 @@ public Inlamning getInlamning(String inlamningid) {
 	return null;
 }
 
-public void skapaInlamning(String date, String fil, String id) {
-	Inlamning inlamning = new Inlamning(date, fil, id);
+public String createID() {
+	String id = null;
+	
+	if (inlamningar.size() == 0) {
+		id = "INL";
+	} else if (inlamningar.size() == 1) {
+		id = "KOMPL1";
+	} else if (inlamningar.size() == 2) {
+		id = "KOMPL2";
+	} else if (inlamningar.size() == 3) {
+		id = "KOMPL3";
+	}
+	
+	return id;
+}
+//IAD steg 1-7: Steg 7
+public void skapaInlamning(String fil) {
+
+	Inlamning inlamning = new Inlamning(fil, createID());
 	inlamningar.add(inlamning);
 	
 }
@@ -51,6 +68,25 @@ public ArrayList<Inlamning> getInlamningar() {
 
 public void setInlamningar(ArrayList<Inlamning> inlamningar) {
 	this.inlamningar = inlamningar;
+}
+
+//IAD steg 1-7: Steg 6
+public void storeFile(String fil) {
+	skapaInlamning(fil);
+}
+
+
+
+public void examineraUppgift(String inlamningid, String betyg, String betygskala) {
+	getInlamning(inlamningid).examineraUppgift(betyg, betygskala);
+	
+}
+
+
+
+public String hamtaUppgift(String inlamningid) {
+	String file = getInlamning(inlamningid).getFile();
+	return file;
 }
 
 
